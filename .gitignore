@@ -1,0 +1,35 @@
+# --- Raw & processed data ---------------------------------------------------
+# The raw Olist CSVs (~130MB) and the regenerable master dataset are not
+# checked in; see the README for the one-line command that rebuilds them.
+data/raw/*.csv
+outputs/processed/*.parquet
+outputs/processed/*.csv
+
+# Keep the folder structure itself under git via .gitkeep placeholders.
+!data/raw/.gitkeep
+!outputs/processed/.gitkeep
+!outputs/reports/.gitkeep
+
+# --- Python ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
+
+# --- Virtual environments -----------------------------------------------------
+.venv/
+venv/
+env/
+
+# --- Streamlit -----------------------------------------------------------------
+.streamlit/secrets.toml
+
+# --- OS / editor ---------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
