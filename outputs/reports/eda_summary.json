@@ -1,0 +1,18 @@
+{
+  "kpis": {
+    "total_orders": 98666,
+    "total_revenue": 15669233.19,
+    "avg_order_value": 160.0763458512964,
+    "avg_review_score": 4.032853510939234,
+    "avg_delivery_time_days": 12.472245549040656,
+    "late_delivery_rate_pct": 7.908230404123824,
+    "total_customers": 95420,
+    "total_sellers": 3095
+  },
+  "delivery_performance": {
+    "mean_days": 12.472245549040656,
+    "median_days": 10.184201388888889,
+    "p90_days": 22.920328703703703,
+    "late_rate_pct": 7.908230404123824
+  }
+}
