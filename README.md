@@ -42,11 +42,12 @@ categories by revenue; São Paulo state (`SP`) alone accounts for roughly
 olist-ecommerce-analytics/
 ├── config.py                  # Central paths, palette, and domain constants
 ├── main.py                    # CLI entry point: runs the full pipeline end to end
+├── prepare_data.py            # Extracts the zipped raw data in data/raw/
 ├── requirements.txt
 ├── LICENSE
 │
 ├── data/
-│   └── raw/                   # Place the 9 Olist CSVs here (not checked into git)
+│   └── raw/                   # The 9 Olist CSVs, zipped (run prepare_data.py)
 │
 ├── src/
 │   ├── data_loader.py         # Read raw CSVs, validate schema
@@ -82,9 +83,13 @@ dashboard and the static report can never silently disagree.
 This project uses the **Brazilian E-Commerce Public Dataset by Olist**
 (~100k orders from 2016–2018, across 9 relational CSVs: orders, order
 items, payments, reviews, products, customers, sellers, geolocation, and
-a category-name translation table). Download it from
-[Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) and
-place the 9 CSV files in `data/raw/`.
+a category-name translation table), originally published on
+[Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce).
+
+**The data is included in this repository** in `data/raw/` as zip files,
+so the project runs right after cloning. The geolocation table (~61 MB) is
+split into two parts to fit GitHub's file size limit;
+`prepare_data.py` extracts everything and joins the parts back together.
 
 ## Setup
 
@@ -100,8 +105,8 @@ source .venv/bin/activate      # Windows: .venv\Scripts\activate
 # 3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Add the raw data
-#    Download the 9 CSVs from Kaggle and place them in data/raw/
+# 4. Extract the included data (unzips data/raw/*.zip)
+python prepare_data.py
 ```
 
 ## Usage

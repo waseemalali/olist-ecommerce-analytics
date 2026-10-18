@@ -1,0 +1,3 @@
+# Keep Python as the main language in GitHub's language bar
+outputs/figures/interactive/*.html linguist-generated=true
+*.zip linguist-vendored=true
